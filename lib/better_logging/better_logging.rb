@@ -120,7 +120,7 @@ module PaulDowman
 
         if message.nil?
           if block_given?
-            if severity < @level
+            if @level && severity < @level
               return true
             end        
             message = yield
